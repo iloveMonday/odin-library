@@ -1,0 +1,42 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(13, 201, 201);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+}
+
+.sidebar{
+    background-color: darkred;
+    padding: .5em;
+}
+
+dialog{
+    background-color: yellow;
+    display: grid;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.books{
+    background-color: orange;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: 300px;
+    gap: 1em;
+    padding: .75em;
+    
+}
+
+.book-card{
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    border-radius: 5px;
+}

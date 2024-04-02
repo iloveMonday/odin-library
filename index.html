@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Book Liberry</title>
+  </head>
+  <body>
+    <div class="sidebar">
+        <h1>book liberry</h1>
+        <button id="new-book-button">NEW BOOK</button>
+        <dialog>
+            <div class="new-book">
+            
+                    <form action="">
+                        <label for="title">Title:</label>
+                      <input type="text" id="title" class="title" required autofocus placeholder="The Bible" required />
+                      <label for="author">Author:</label>
+                      <input type="text" id="author" class="author" required placeholder="Jesus" required />
+                      <label for="pages">Pages:</label>
+                      <input type="number" id="pages" class="pages" required>
+                      <label for="read">Have you read this?</label>
+                      <input type="checkbox" id="read" class="read">
+                      <button id="add-book">+ADD</button>
+                    </form>
+            
+            </div>
+        </dialog>
+    </div>
+    <div class="books">
+        <div class="book-card">
+            <h2>The Dispossessed</h2>
+            <p>By Ursula K. LeGuin</p>
+            <p>311 pages</p>
+            <button class="read-button">Read</button>
+            <button class="remove-button">Remove</button>
+        </div>
+
+        <div class="book-card">
+            <h2>The Dispossessed</h2>
+            <p>By Ursula K. LeGuin</p>
+            <p>311 pages</p>
+            <button class="read-button">Read</button>
+            <button class="remove-button">Remove</button>
+        </div>
+        <div class="book-card">
+            <h2>The Dispossessed</h2>
+            <p>By Ursula K. LeGuin</p>
+            <p>311 pages</p>
+            <button class="read-button">Read</button>
+            <button class="remove-button">Remove</button>
+        </div>
+    </div>
+
+  </body>
+</html>
