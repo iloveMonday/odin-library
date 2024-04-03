@@ -21,8 +21,16 @@
                       <input type="text" id="author" class="author" required placeholder="Jesus" required />
                       <label for="pages">Pages:</label>
                       <input type="number" id="pages" class="pages" required>
-                      <label for="read">Have you read this?</label>
-                      <input type="checkbox" id="read" class="read">
+                      <!-- <label for="read">Have you read this?</label>
+                      <input type="checkbox" id="read" class="read"> -->
+                      <div>
+                          <input type="radio" id="read" value="read" class="read" name="read" checked>
+                          <label for="read">Read</label>
+                      </div>
+                      <div>
+                          <input type="radio" id="unread" value="unread" class="read" name="read">
+                          <label for="unread">Unread</label>
+                      </div>
                       <button id="add-book">+ADD</button>
                     </form>
             
@@ -38,7 +46,7 @@
             <button class="remove-button">Remove</button>
         </div>
 
-        <div class="book-card">
+        <!-- <div class="book-card">
             <h2>The Dispossessed</h2>
             <p>By Ursula K. LeGuin</p>
             <p>311 pages</p>
@@ -51,7 +59,7 @@
             <p>311 pages</p>
             <button class="read-button">Read</button>
             <button class="remove-button">Remove</button>
-        </div>
+        </div> -->
     </div>
 
   </body>
