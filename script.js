@@ -1,6 +1,6 @@
 let readButton = document.querySelector(".read-button");
 let addBookButton = document.getElementById("add-book");
-let dialog = document.querySelector("dialog");
+let dialog = document.querySelector(".dialog");
 let newBookButton = document.getElementById("new-book-button");
 let bookContainer = document.querySelector(".books");
 
@@ -59,7 +59,19 @@ function addBookToLibrary() {
   let newTitle = document.querySelector(".title").value;
   let newAuthor = document.querySelector(".author").value;
   let newPages = document.querySelector(".pages").value;
-  let newRead = document.querySelector(".read").value;
+//   let newRead = document.querySelector(".read").value;
+
+    let newRead = "";
+    let rd = document.getElementById("read");
+    let unrd = document.getElementById("unread");
+    if (rd.checked==true){
+        newRead = "Read";
+        console.log("ready");
+    }
+    else if (unrd.checked==true){
+        newRead = "Unread";
+        console.log("unready");
+    }
 
   let newBook = new Book(newTitle, newAuthor, newPages, newRead);
   myLibrary.push(newBook);
@@ -70,11 +82,11 @@ function clear() {
   let newTitle = document.querySelector(".title");
   let newAuthor = document.querySelector(".author");
   let newPages = document.querySelector(".pages");
-  let newRead = document.querySelector(".read");
+  let newRead = document.getElementById("read");
   newTitle.value = "";
   newAuthor.value = "";
   newPages.value = "";
-  newRead.checked = false;
+  newRead.checked = true;
 }
 
 function addBookCard(){ 
@@ -92,16 +104,16 @@ function addBookCard(){
             author.innerHTML = "By "+e.author;
             pages.innerHTML = e.pages+" pages";
 
-            // if (e.read === "off"){
-            //     e.read.style.backgroundColor = "green";
-            //     e.read.innerHTML = "Read";
-            // }
-            // else if (e.read === "on") {
-            //     e.read.style.backgroundColor = "red";
-            //     e.read.innerHTML = "unread";
-            // }
+            if (e.read == "Read"){
+                read.style.backgroundColor = "green";
+                read.innerHTML = "Read";
+            }
+            else if (e.read == "Unread") {
+                read.style.backgroundColor = "red";
+                read.innerHTML = "unread";
+            }
 
-            read.className = "read-button";
+            read.className = "read-button"+(myLibrary.length-1);
             read.innerHTML = e.read;
 
             remove.className = "remove-button";
