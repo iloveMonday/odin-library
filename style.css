@@ -6,17 +6,39 @@ body{
     height: 100vh;
 }
 
+h1{
+    color: orange;
+}
 
+h2{
+    color: rgb(187, 135, 135);
+}
 
 .sidebar{
     background-color: rgb(105, 20, 20);
     padding: .5em;
 }
 
-dialog{
+#book-modal {
+    /* display: none; */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 15px;
+    top: 150px;
+    width: 200px; 
+    height: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid brown;
+    border-width: 6px;
+    border-style: double;
     background-color: yellow;
-    display: grid;
-}
+  }
+
+  .close{
+    cursor: grab;
+  }
+
 
 form{
     display: flex;
@@ -27,7 +49,7 @@ form{
 .books{
     background-color: orange;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
     grid-template-rows: 300px;
     gap: 1em;
     padding: .75em;
@@ -37,9 +59,13 @@ form{
 .book-card{
     background-color: darkred;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     height: 300px;
-
     border-radius: 5px;
+
+    border: 2px solid yellow;
+    border-width: 6px;
+    border-style: double;
 }

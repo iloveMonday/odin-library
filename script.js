@@ -1,16 +1,20 @@
-let readButton = document.querySelector(".read-button");
+let readButton = document.querySelectorAll(".read-button");
+
 let addBookButton = document.getElementById("add-book");
-let dialog = document.querySelector(".dialog");
+let bookModal = document.getElementById("book-modal");
+let close = document.querySelector(".close");
 let newBookButton = document.getElementById("new-book-button");
 let bookContainer = document.querySelector(".books");
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, index, removeIndex) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.index = index;
+  this.removeIndex = removeIndex;
 //   this.info = function () {
 //     return title + " by " + author + ", " + pages + " pages, " + read;
 //   };
@@ -20,25 +24,25 @@ function Book(title, author, pages, read) {
 //   "The Hobbit",
 //   "J.R.R. Tolkien",
 //   "295",
-//   "not read yet"
+//   "Unread"
 // );
 // const theSympathizer = new Book(
 //   "The Sympathizer",
 //   "Viet Thanh Nguyen",
 //   "382",
-//   "read"
+//   "Read"
 // );
 // const parableOfTheSower = new Book(
 //   "Parable of the Sower",
 //   "Octavia Butler",
 //   "329",
-//   "read"
+//   "Read"
 // );
 // const rockSprings = new Book(
 //   "Rock Springs",
 //   "Richard Ford",
 //   "235",
-//   "not read yet"
+//   "Unread"
 // );
 
 // const allAboutEggs = new Book(
@@ -46,13 +50,17 @@ function Book(title, author, pages, read) {
 //         "All About Eggs",
 //         "Rachel Khong",
 //         "252",
-//         "read",
+//         "Read",
 // );
 
 // myLibrary.push(theHobbit, theSympathizer, parableOfTheSower, rockSprings, allAboutEggs);
 
 newBookButton.addEventListener("click", () => {
-  dialog.showModal();
+  bookModal.style.display = "block";
+});
+
+close.addEventListener("click", () =>{
+    bookModal.style.display = "none";
 });
 
 function addBookToLibrary() {
@@ -66,14 +74,14 @@ function addBookToLibrary() {
     let unrd = document.getElementById("unread");
     if (rd.checked==true){
         newRead = "Read";
-        console.log("ready");
     }
     else if (unrd.checked==true){
         newRead = "Unread";
-        console.log("unready");
     }
 
-  let newBook = new Book(newTitle, newAuthor, newPages, newRead);
+  let newIndex = (myLibrary.length);
+  let newRemoveIndex = ("rm" + myLibrary.length);
+  let newBook = new Book(newTitle, newAuthor, newPages, newRead, newIndex, newRemoveIndex);
   myLibrary.push(newBook);
   event.preventDefault();
 }
@@ -89,12 +97,11 @@ function clear() {
   newRead.checked = true;
 }
 
-function addBookCard(){ 
+function displayBooks(){ 
     bookContainer.innerHTML = "";
     myLibrary.forEach((e) =>{
             let newCard = document.createElement("div");
             newCard.className = "book-card";
-            newCard.setAttribute("id", myLibrary.length-1);
             let title = document.createElement("h2");
             let author = document.createElement("p");
             let pages = document.createElement("p");
@@ -113,11 +120,13 @@ function addBookCard(){
                 read.innerHTML = "unread";
             }
 
-            read.className = "read-button"+(myLibrary.length-1);
+            // read.className = "read-button"+(e.index);
             read.innerHTML = e.read;
 
             remove.className = "remove-button";
+            remove.setAttribute("id", "rm" + e.index);
             remove.innerHTML = "Remove";
+            newCard.setAttribute("id", e.index);
             newCard.appendChild(title);
             newCard.appendChild(author);
             newCard.appendChild(pages);
@@ -125,18 +134,33 @@ function addBookCard(){
             newCard.appendChild(remove);
             bookContainer.appendChild(newCard);  
             
-});
-    //console.log(e.)         
+});       
+    removeBook();
     console.log(myLibrary);
-    console.log(myLibrary.length-1);
 }
 
 function removeBook(){
-    //console.log(document.getElementById('email').value);
+  let removeButton = document.querySelectorAll(".remove-button");
+  removeButton.forEach((button) =>
+    button.addEventListener("click", () =>{
+      let index = button.dataset.index;
+      myLibrary.splice(index, 1);
+      displayBooks();
+    }));
 }
+    //console.log(document.getElementById('email').value);
+
 
 addBookButton.addEventListener("click", () => {
   addBookToLibrary();
-    clear();
-    addBookCard();
+  clear();
+  displayBooks();
 });
+
+
+
+// readButton.addEventListener("click", () =>{
+    
+// })
+
+// someArray.splice(x, 1);

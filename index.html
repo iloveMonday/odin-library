@@ -11,14 +11,15 @@
     <div class="sidebar">
         <h1>book liberry</h1>
         <button id="new-book-button">NEW BOOK</button>
-        <dialog class="dialog">
-            <div class="new-book">
+        <!-- <dialog class="dialog"> -->
+            <div id="book-modal" class="new-book">
+                    <span class="close">&times;</span>
             
-                    <form action="">
+                    <form action="'">
                         <label for="title">Title:</label>
-                      <input type="text" id="title" class="title" required autofocus placeholder="The Bible" required />
+                      <input type="text" id="title" class="title" autofocus placeholder="The Bible" required />
                       <label for="author">Author:</label>
-                      <input type="text" id="author" class="author" required placeholder="Jesus" required />
+                      <input type="text" id="author" class="author" placeholder="Jesus" required />
                       <label for="pages">Pages:</label>
                       <input type="number" id="pages" class="pages" required>
                       <!-- <label for="read">Have you read this?</label>
@@ -35,7 +36,7 @@
                     </form>
             
             </div>
-        </dialog>
+        <!-- </dialog> -->
     </div>
     <div class="books">
         <div class="book-card">
