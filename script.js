@@ -11,48 +11,14 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-//   this.info = function () {
-//     return title + " by " + author + ", " + pages + " pages, " + read;
-//   };
+  this.info = function () {
+    return title + " by " + author + ", " + pages + " pages, " + read;
+  };
 }
-
-// const theHobbit = new Book(
-//   "The Hobbit",
-//   "J.R.R. Tolkien",
-//   "295",
-//   "Unread"
-// );
-// const theSympathizer = new Book(
-//   "The Sympathizer",
-//   "Viet Thanh Nguyen",
-//   "382",
-//   "Read"
-// );
-// const parableOfTheSower = new Book(
-//   "Parable of the Sower",
-//   "Octavia Butler",
-//   "329",
-//   "Read"
-// );
-// const rockSprings = new Book(
-//   "Rock Springs",
-//   "Richard Ford",
-//   "235",
-//   "Unread"
-// );
-
-// const allAboutEggs = new Book(
-    
-//         "All About Eggs",
-//         "Rachel Khong",
-//         "252",
-//         "Read",
-// );
-
-// myLibrary.push(theHobbit, theSympathizer, parableOfTheSower, rockSprings, allAboutEggs);
 
 newBookButton.addEventListener("click", () => {
   bookModal.style.display = "block";
+  document.getElementById("title").focus();
 });
 
 close.addEventListener("click", () =>{
@@ -86,44 +52,12 @@ function clear() {
   newAuthor.value = "";
   newPages.value = "";
   newRead.checked = true;
+  document.getElementById("title").focus();
 }
 
 function displayBooks(){ 
     bookContainer.innerHTML = "";
-//     myLibrary.forEach((e) =>{
-//             let newCard = document.createElement("div");
-//             newCard.className = "book-card";
-//             let title = document.createElement("h2");
-//             let author = document.createElement("p");
-//             let pages = document.createElement("p");
-//             let read = document.createElement("button")
-//             let remove = document.createElement("button");
-//             title.innerHTML = e.title;
-//             author.innerHTML = "By "+e.author;
-//             pages.innerHTML = e.pages+" pages";
-
-//             if (e.read == "Read"){
-//                 read.style.backgroundColor = "green";
-//                 read.innerHTML = "Read";
-//             }
-//             else if (e.read == "Unread") {
-//                 read.style.backgroundColor = "red";
-//                 read.innerHTML = "unread";
-//             }
-
-//             // read.className = "read-button"+(e.index);
-//             read.innerHTML = e.read;
-//             read.className = "read-button";
-//             remove.className = "remove-button";
-//             remove.innerHTML = "Remove";
-//             newCard.setAttribute("data-attribute", e.index);
-//             newCard.appendChild(title);
-//             newCard.appendChild(author);
-//             newCard.appendChild(pages);
-//             newCard.appendChild(read);
-//             newCard.appendChild(remove);
-//             bookContainer.appendChild(newCard);  
-// });       
+     
 
 for (let i = 0; i < myLibrary.length; i++){
   let newCard = document.createElement("div");
