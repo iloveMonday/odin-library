@@ -11,7 +11,6 @@
     <div class="sidebar">
         <h1>book liberry</h1>
         <button id="new-book-button">NEW BOOK</button>
-        <!-- <dialog class="dialog"> -->
             <div id="book-modal" class="new-book">
                     <span class="close">&times;</span>
             
@@ -22,8 +21,6 @@
                       <input type="text" id="author" class="author" placeholder="Jesus" required />
                       <label for="pages">Pages:</label>
                       <input type="number" id="pages" class="pages" required>
-                      <!-- <label for="read">Have you read this?</label>
-                      <input type="checkbox" id="read" class="read"> -->
                       <div>
                           <input type="radio" id="read" value="read" class="read" name="read" checked>
                           <label for="read">Read</label>
@@ -36,31 +33,18 @@
                     </form>
             
             </div>
-        <!-- </dialog> -->
+    
     </div>
     <div class="books">
         <div class="book-card">
             <h2>The Dispossessed</h2>
             <p>By Ursula K. LeGuin</p>
             <p>311 pages</p>
-            <button class="read-button">Read</button>
-            <button class="remove-button">Remove</button>
+            <div class="buttons">
+                <button class="read-button">Read</button>
+                <button class="remove-button">Remove</button>
+            </div>
         </div>
-
-        <!-- <div class="book-card">
-            <h2>The Dispossessed</h2>
-            <p>By Ursula K. LeGuin</p>
-            <p>311 pages</p>
-            <button class="read-button">Read</button>
-            <button class="remove-button">Remove</button>
-        </div>
-        <div class="book-card">
-            <h2>The Dispossessed</h2>
-            <p>By Ursula K. LeGuin</p>
-            <p>311 pages</p>
-            <button class="read-button">Read</button>
-            <button class="remove-button">Remove</button>
-        </div> -->
     </div>
 
   </body>

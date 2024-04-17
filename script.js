@@ -131,6 +131,8 @@ for (let i = 0; i < myLibrary.length; i++){
   let title = document.createElement("h2");
   let author = document.createElement("p");
   let pages = document.createElement("p");
+  let buttons = document.createElement("div")
+  buttons.className = "buttons"
   let read = document.createElement("button")
   read.className = "read-button";
   read.setAttribute("data-index", i);
@@ -144,19 +146,22 @@ for (let i = 0; i < myLibrary.length; i++){
   pages.innerHTML = myLibrary[i].pages+" pages";
 
   if (myLibrary[i].read == "Read"){
-      read.style.backgroundColor = "green";
+      read.style.backgroundColor = "yellow";
+      read.style.color = "black"
       read.innerHTML = "Read";
   }
   else if (myLibrary[i].read == "Unread") {
-      read.style.backgroundColor = "red";
+      read.style.backgroundColor = "brown";
+      read.style.color = "white";
       read.innerHTML = "Unread";
   }
 
   newCard.appendChild(title);
   newCard.appendChild(author);
   newCard.appendChild(pages);
-  newCard.appendChild(read);
-  newCard.appendChild(remove);
+  buttons.appendChild(read);
+  buttons.appendChild(remove);
+  newCard.appendChild(buttons)
   bookContainer.appendChild(newCard);  
 }
 

@@ -1,5 +1,5 @@
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: rgb(13, 201, 201);
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -11,16 +11,26 @@ h1{
 }
 
 h2{
-    color: rgb(187, 135, 135);
+    color: orange;
 }
 
 .sidebar{
     background-color: rgb(105, 20, 20);
     padding: .5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#new-book-button{
+    background-color: yellow;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 #book-modal {
-    /* display: none; */
+    display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 15px;
@@ -57,15 +67,26 @@ form{
 }
 
 .book-card{
-    background-color: darkred;
+    background-color: rgb(238, 58, 58);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     height: 300px;
     border-radius: 5px;
 
     border: 2px solid yellow;
     border-width: 6px;
     border-style: double;
+}
+
+.read-button{
+    width: 65px;
+    margin: 2px;
+}
+
+.remove-button{
+    background-color: red;
+    margin: 2px;
 }
