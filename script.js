@@ -167,9 +167,9 @@ for (let i = 0; i < myLibrary.length; i++){
 
 function removeBook(){
   let removeButton = document.querySelectorAll(".remove-button");
-  removeButton.forEach((button) =>
-    button.addEventListener("click", () =>{
-      let index = button.dataset.index;
+  removeButton.forEach((e) =>
+    e.addEventListener("click", () =>{
+      let index = e.dataset.index;
       myLibrary.splice(index, 1);
       displayBooks();
     }));
@@ -179,14 +179,13 @@ function toggleRead(){
   let readButton = document.querySelectorAll(".read-button");
   readButton.forEach((e) => 
     e.addEventListener("click", () =>{
-      let i = e.dataset.index;
-      // if (myLibrary[i].read == "Read"){
-      //   myLibrary[i].read == "Unread";
-      // } else if 
-      // (myLibrary[i].read == "Unread"){
-      //   myLibrary[i].read == "Read";
-      // }
-      console.log(myLibrary[i].index);
+      let index = e.dataset.index;
+      if (myLibrary[index].read == "Read"){
+        myLibrary[index].read = "Unread";
+      } else if 
+      (myLibrary[index].read == "Unread"){
+        myLibrary[index].read = "Read";
+      }
 
     displayBooks();
     }));
