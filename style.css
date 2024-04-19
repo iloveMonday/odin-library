@@ -69,7 +69,7 @@ form{
 .book-card{
     background-color: rgb(238, 58, 58);
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -80,6 +80,7 @@ form{
     border-width: 6px;
     border-style: double;
 }
+
 
 .read-button{
     width: 65px;
