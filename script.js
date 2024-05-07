@@ -1,3 +1,5 @@
+//testing new branch
+
 let addBookButton = document.getElementById("add-book");
 let bookModal = document.getElementById("book-modal");
 let close = document.querySelector(".close");
@@ -6,7 +8,8 @@ let bookContainer = document.querySelector(".books");
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
+class Book{
+  constructor(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -14,7 +17,7 @@ function Book(title, author, pages, read) {
   this.info = function () {
     return title + " by " + author + ", " + pages + " pages, " + read;
   };
-}
+}}
 
 newBookButton.addEventListener("click", () => {
   bookModal.style.display = "block";
